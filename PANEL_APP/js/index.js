@@ -4,7 +4,8 @@ var tlistLIST = [];
 
 function init() {
     let genesisButton = document.createElement("button");
-    genesisButton.innerHTML = "Create New List";
+    var genesisString = new String("Create New List");
+    genesisButton.innerHTML = '<b>' + genesisString + '</b>';
     document.body.appendChild(genesisButton);
     genesisButton.onclick = function() {genesisOnClick()};
 }
@@ -17,7 +18,8 @@ function genesisOnClick() {
     newButton.style.wordSpacing = "3px";
     document.body.appendChild(newButton);
     tlistNAME.push(prompt("Enter the name of this list:", "Eg. School Work"));
-    newButton.innerHTML = tlistNAME[listID];
+    var listName = new String(tlistNAME[listID])
+    newButton.innerHTML = '<b>' + listName + '</b>';
     newButton.addEventListener("click", function() {listOnClick(newButton.id)});
 }
 
