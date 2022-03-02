@@ -1,22 +1,39 @@
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
+class Timer {
+  constructor(seconds, minutes) {
+    this.seconds = seconds;
+    this.minutes = minutes;
+  }
 }
+function startTimer(){
+  var counter = 70;
+  setInterval(function() {
+    counter--;
+    if (counter >= 0) {
+      span = document.getElementById("count");
+      minutes = parseInt(counter/60);
+      seconds = counter - (minutes*60)
+      if (seconds < 10) {
+        span.innerHTML = minutes + ":0" + seconds;
+      }
+      else {
+        span.innerHTML = minutes + ":" + seconds;
+      }
+    }
 
-window.onload = function () {
-    var fiveMinutes = 60 * 5,
-        display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
+    /*
+    if (this.counter / 60 != 0) {
+      this.minutes+= this.counter/60;
+      document.body.appendChild(minutes);
+    }
+    */
+
+    if (counter === 0) {
+        alert('sorry, out of time');
+        clearInterval(counter);
+    }
+  }, 1000);
+}
+function start() {
+    document.getElementById("count").style="color:green;";
+    startTimer();
 };
