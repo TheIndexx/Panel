@@ -1,6 +1,25 @@
+//localStorage.clear();
+// const testListName = ["Math", "French"]
+// const testTasks = [["Calc1", "Calc2"], ["Yabla1", "Yabla2"]]
+// localStorage.setItem("listNameArray", JSON.stringify(testListName));
+// localStorage.setItem("taskArray", JSON.stringify(testTasks));
+
+// looks weird, fix later
+if (localStorage.getItem("listNameArray") === null) {
+    var listNameArray = [];
+}
+else {
+    var listNameArray = JSON.parse(localStorage.getItem("listNameArray"));
+}
+
+if (localStorage.getItem("taskArray") === null) {
+    var taskArray = [];
+}
+else {
+    var taskArray = JSON.parse(localStorage.getItem("taskArray"));
+}
+
 var listID = -1;
-var listNameArray = [];
-var taskArray = [];
 
 function init() {
     //genesis button =  "Create New List"
@@ -12,6 +31,7 @@ function init() {
     document.body.appendChild(genesisButton);
     //when button clicked, call genesisOnClick
     genesisButton.onclick = function() {genesisOnClick()};
+    createExistingLists(listNameArray, taskArray);
 }
 
 //function called when genesis button clicked clicked. creates a new list and prompts for a name
@@ -26,12 +46,36 @@ function genesisOnClick() {
     document.body.appendChild(newButton);
     //prompts for a name
     listNameArray.push(prompt("Enter the name of this list:", "Eg. School Work"));
+    taskArray.push([]);
     //bolds the name of list
-    var listName = new String(listNameArray[listID])
+    var listName = new String(listNameArray[listID]);
+    localStorage.setItem("listNameArray", JSON.stringify(listNameArray));
     newButton.innerHTML = '<b>' + listName + '</b>';
 
     //when button is clicked, call newTask which creates a task
     newButton.addEventListener("click", function() {newTask(newButton.id)});
+}
+
+// function to re-create lists and tasks from localstorage
+function createExistingLists(listNameArray, taskArray) {
+    for (let i = 0; i < listNameArray.length; i++) {
+        listID = listID + 1;
+        let newButton = document.createElement("button");
+        newButton.id = listID;
+        newButton.style.whiteSpace = "pre-line";
+        newButton.style.wordSpacing = "3px";    
+        document.body.appendChild(newButton);
+        newButton.innerHTML = '<b>' + listNameArray[i] + '</b>';
+        currentTaskArray = taskArray[i];
+        if (currentTaskArray === undefined || currentTaskArray.length == 0) {
+        }
+        else {
+            for (let n = 0; n < currentTaskArray.length; n++) {
+                newButton.innerHTML += '\n' + currentTaskArray[n];
+            }
+        }
+        newButton.addEventListener("click", function() {newTask(newButton.id)});
+    }
 }
 
 function newTask(btnID) {
@@ -54,6 +98,8 @@ function newTask(btnID) {
         currentTLIST.push(prompt("Enter a task for " + listNameArray[btnID], "Eg. Math hw"));
         btn.innerHTML += '\n' + currentTLIST[currentTLIST.length - 1];
     }
+    localStorage.setItem("listNameArray", JSON.stringify(listNameArray));
+    localStorage.setItem("taskArray", JSON.stringify(taskArray));
 }
 
 init();
