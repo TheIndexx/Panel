@@ -1,12 +1,24 @@
 button
 {
-font-size:15px;
-background-color:black;
-color:white;
+font-size:25px;
+background-color:rgb(12, 14, 29);
+color:rgb(197, 21, 21);
 }
 #count
 {
-   margin-left:20px;
-   font-size:20px;
-   color:black;
+   margin-left:40px;
+   font-style: normal;
+   font-size:25px;
+   color:rgb(216, 19, 19);
+}
+
+body{
+   <div class="box-1">
+   background-color: blueviolet;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-weight: 600;
+   line-height: 2em;
+   margin: auto
+   border-right:5px red solid
+
 }
