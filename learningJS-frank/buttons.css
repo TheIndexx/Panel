@@ -1,0 +1,8 @@
+.createTimer{
+    font-size:20px;
+    border-radius: 10px;
+    padding: 8px 10px;
+    /* border: none; */
+    background-color:#c6e2ff;
+    color:rgb(212, 140, 140);
+}

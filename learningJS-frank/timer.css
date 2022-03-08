@@ -9,8 +9,6 @@ body {
     padding: 24px 32px;
     border-radius: 30px;
     background: white;
-    position: relative;
-    top: 100px;
 }
 
 .timer__part {
