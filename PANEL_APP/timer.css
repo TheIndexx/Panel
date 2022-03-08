@@ -13,12 +13,10 @@ color:rgb(197, 21, 21);
 }
 
 body{
-   <div class="box-1">
    background-color: blueviolet;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
    font-weight: 600;
    line-height: 2em;
    margin: auto
-   border-right:5px red solid
 
 }
