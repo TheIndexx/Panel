@@ -1,6 +1,6 @@
 body {
   margin: 24px;
-  background-color: black;
+  background-color: rgb(135, 123, 207);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 600;
   line-height: 2em;
@@ -15,7 +15,7 @@ body {
   padding: 10px 32px;
   border-radius: 30px;
   position: fixed;
-  bottom: 30px;
+  bottom: 140px;
   left: 24px;
   background: rgb(243, 151, 90);
   position: fixed;
@@ -37,14 +37,6 @@ body {
   cursor: pointer;
 }
 
-.timer__btn--start {
-  background: #00b84c;
-}
-
-.timer__btn--stop {
-  background: #ff0256;
-}
-
 .text {
   background: rgb(87, 139, 218);
   border-radius: 30px;
@@ -56,11 +48,12 @@ body {
   font-family: sans-serif;
   display: inline-block;
   padding: 10px 32px;
+  padding-top: 40px;
   border-radius: 30px;
   background: rgb(243, 151, 90);
   position: fixed;
   bottom: 30px;
-  left: 350px;
+  left: 24px;
   z-index: -1;
 }
 
@@ -110,7 +103,7 @@ body {
 }
 
 #context-menu .item:hover {
-  background: #343434;
+  background: #b87676;
 }
 
 button
@@ -121,10 +114,11 @@ font-size:20px;
 .button_create
 {
   display: inline-block;
-  padding: 10px 20px;
-  border-radius: 30px;
+  padding: 10px 14px;
+  margin-right: 10px;
+  border-radius: 50%;
   border: none;
-  background: green;
+  background: #00b84c;
   color:black;
 }
 
@@ -143,14 +137,15 @@ font-size:20px;
 
 .list
 {
-  background: gray;
+  background: rgb(243, 110, 110);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 17px;
   white-space: pre-line;
   word-spacing: 3px;
-  border: none;
+  /* border: none; */
   padding: 10px 10px;
   border-radius: 10px;
+  margin: 10px;
 }
 
 #count
