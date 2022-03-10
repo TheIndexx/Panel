@@ -6,9 +6,9 @@ body {
 .timer {
     font-family: sans-serif;
     display: inline-block;
-    padding: 24px 32px;
+    padding: 10px 32px;
     border-radius: 30px;
-    background: white;
+    background: rgb(243, 151, 90);
 }
 
 .timer__part {
@@ -32,5 +32,49 @@ body {
 }
 
 .timer__btn--stop {
+    background: #ff0256;
+}
+
+.text {
+    background: rgb(87, 139, 218);
+    border-radius: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.timer2 {
+    font-family: sans-serif;
+    display: inline-block;
+    padding: 24px 32px;
+    padding-top: 50px;
+    border-radius: 30px;
+    background: rgb(243, 151, 90);
+    position: fixed;
+    top: 90px;
+    left: 24px;
+    z-index: -1;
+}
+
+.timer2__part {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.timer2__btn {
+    width: 50px;
+    height: 50px;
+    margin-left: 16px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background: #8208e6;
+    cursor: pointer;
+}
+
+.timer2__btn--start {
+    background: #00b84c;
+}
+
+.timer2__btn--stop {
     background: #ff0256;
 }
