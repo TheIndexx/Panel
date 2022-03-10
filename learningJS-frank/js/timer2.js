@@ -1,23 +1,23 @@
-class Timer {
-    //root refers to index.html's <div class="timer"> </div>
+class Timer2 {
+    //root refers to index.html's <div class="timer2"> </div>
         constructor(root) {
-            root.innerHTML = Timer.getHTML();
+            root.innerHTML = timer2.getHTML();
           
             // querySelector returns first element that matches selector https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
             this.elements = {
-                minutes: root.querySelector(".timer__part--minutes"),
-                seconds: root.querySelector(".timer__part--seconds"),
-                control: root.querySelector(".timer__btn--control"),
-                reset: root.querySelector(".timer__btn--reset")
+                minutes: root.querySelector(".timer2__part--minutes"),
+                seconds: root.querySelector(".timer2__part--seconds"),
+                control: root.querySelector(".timer2__btn--control"),
+                reset: root.querySelector(".timer2__btn--reset")
             };
           
-        //interval = null makes timer not change. ie interval = 2 means timer decreases by 2
+        //interval = null makes timer2 not change. ie interval = 2 means timer2 decreases by 2
         this.interval = null;
         this.remainingSeconds = 0;
 
         this.updateInterfaceControls();
 
-        //start and stop the timer
+        //start and stop the timer2
         this.elements.control.addEventListener("click", () => {
             if (this.interval === null) {
                 this.start();
@@ -38,7 +38,7 @@ class Timer {
         });
     }
 
-    //updates the timer display
+    //updates the timer2 display
     updateInterfaceTime() {
         const minutes = Math.floor(this.remainingSeconds / 60);
         const seconds = this.remainingSeconds % 60;
@@ -53,12 +53,12 @@ class Timer {
         //if not running then display start, else display stop
         if (this.interval === null) {
             this.elements.control.innerHTML = '<span class="material-icons">play_arrow</span>';
-            this.elements.control.classList.add("timer__btn--start");
-            this.elements.control.classList.remove("timer__btn--stop");
+            this.elements.control.classList.add("timer2__btn--start");
+            this.elements.control.classList.remove("timer2__btn--stop");
         } else {
             this.elements.control.innerHTML = '<span class="material-icons">pause</span>';
-            this.elements.control.classList.add("timer__btn--stop");
-            this.elements.control.classList.remove("timer__btn--start");
+            this.elements.control.classList.add("timer2__btn--stop");
+            this.elements.control.classList.remove("timer2__btn--start");
         }
     }
 
@@ -66,7 +66,7 @@ class Timer {
         //check if there is time
         if (this.remainingSeconds === 0) return;
 
-        //setInterval runs on a timer every 1000 milliseconds until there is 0 seconds
+        //setInterval runs on a timer2 every 1000 milliseconds until there is 0 seconds
         this.interval = setInterval(() => {
             this.remainingSeconds--;
             this.updateInterfaceTime();
@@ -91,19 +91,19 @@ class Timer {
 
     static getHTML() {
         // '' allows multiline javascript strings https://www.w3schools.com/js/js_string_templates.asp
-        // sets the properties of the timer class
+        // sets the properties of the timer2 class
         return `
-        <span class="timer__part timer__part--minutes">00</span>
-        <span class="timer__part">:</span>
-        <span class="timer__part timer__part--seconds">00</span>
-        <button type="button" class="timer__btn timer__btn--control timer__btn--start">
+        <span class="timer2__part timer2__part--minutes">00</span>
+        <span class="timer2__part">:</span>
+        <span class="timer2__part timer2__part--seconds">00</span>
+        <button type="button" class="timer2__btn timer2__btn--control timer2__btn--start">
             <span class="material-icons">
                 play_arrow
             </span>
         </button>
-        <button type="button" class="timer__btn timer__btn--reset">
+        <button type="button" class="timer2__btn timer2__btn--reset">
             <span class="material-icons">
-                timer
+                timer2
                 </span>
         </button>
         `;

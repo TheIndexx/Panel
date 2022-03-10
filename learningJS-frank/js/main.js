@@ -1,10 +1,3 @@
-// function studyTimer() {
-//     new Timer(
-//         document.querySelector(".timer")
-//     );
-// };
+new Timer(document.querySelector(".timer"));
+new Timer2(document.querySelector(".timer2"));
 
-
-// studyTimer()
-
-var newTime = new Timer();
