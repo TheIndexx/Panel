@@ -6,7 +6,6 @@ class Timer {
 
     static getHTML() {
         // '' allows multiline javascript strings https://www.w3schools.com/js/js_string_templates.asp
-        // sets the properties of the timer class
         return `
         <span class="timer__part timer__part--minutes">00</span>
         <span class="timer__part">:</span>
