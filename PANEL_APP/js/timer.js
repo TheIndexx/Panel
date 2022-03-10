@@ -15,7 +15,7 @@ class Timer {
         
       //interval = null makes timer not change. ie interval = 2 means timer decreases by 2
       this.interval = null;
-      this.remainingSeconds = 0;
+      this.remainingSeconds = 1500;
 
       this.updateInterfaceControls();
 
@@ -128,7 +128,7 @@ class Timer2 {
         
       //interval = null makes timer2 not change. ie interval = 2 means timer2 decreases by 2
       this.interval = null;
-      this.remainingSeconds = 0;
+      this.remainingSeconds = 300;
 
       this.updateInterfaceControls();
 
