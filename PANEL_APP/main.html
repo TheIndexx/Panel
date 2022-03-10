@@ -2,44 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UACompatible" content="IE=edge">
+  <!-- sets interface to be formatted to size of the device https://www.w3schools.com/css/css_rwd_viewport.asp -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PANEL test</title>
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- connect to css files -->
   <link rel="stylesheet" type="text/css" href="timer.css" />
 </head>
 
 
-<body style="background-color: gray;">
+<body>
   <div id="context-menu">
     <div class="item" onclick="deleteList()">Delete List</div>
   </div>
+
+  <div class="timer"></div>
+  <div class="timer2"></div>
+
   <!-- connects to javascript files -->
   <script src="js/lists.js"></script>
   <script src="js/timer.js"></script>
-
-  
-  <!-- start timer button -->
-  <span id="count">5</span> seconds
-  <br>
-  <button onclick="startTimer()">
-  START
-  </button>
-
-  <div class="btn-group">
-    <button id="startTimer" onclick="startTimer()">
-      Start
-    </button>
-
-    <button id="reset" onclick="resetTime()">
-      Reset
-    </button>
-  </div>
-
-  <div id="timer">
-    00:00
-  </div>
-
-
+  <script src="js/main.js"></script>  
 
 </body>
 </html>

@@ -18,18 +18,16 @@ var listID = -1;
 
 function init() {
     let deleteAllButton = document.createElement("button");
-    var deleteString = new String("Delete All Lists");
-    //innerHTML: text inside button being bolded
-    deleteAllButton.innerHTML = '<b>' + deleteString + '</b>';
+    deleteAllButton.classList.add("button_deleteAll");
+    deleteAllButton.innerHTML = '<span class="material-icons">delete_forever</span>';
     //add button to page
     document.body.appendChild(deleteAllButton);
     deleteAllButton.addEventListener("click", function() {deleteAllLists()});
 
     //genesis button =  "Create New List"
     let genesisButton = document.createElement("button");
-    var genesisString = new String("Create New List");
-    //innerHTML: text inside button being bolded
-    genesisButton.innerHTML = '<b>' + genesisString + '</b>';
+    genesisButton.classList.add("button_create")
+    genesisButton.innerHTML = '<span class="material-icons">add</span>';
     //add button to page
     document.body.appendChild(genesisButton);
     //when button clicked, call genesisOnClick
@@ -58,8 +56,7 @@ function genesisOnClick() {
     listID = listID + 1;
     newButton.id = listID;
     //formats the lists
-    newButton.style.whiteSpace = "pre-line";
-    newButton.style.wordSpacing = "3px";
+    newButton.classList.add("list");
     document.body.appendChild(newButton);
 
     //prompts for a name
@@ -96,8 +93,7 @@ function createExistingLists(listNameArray, taskArray) {
         listID = listID + 1;
         let newButton = document.createElement("button");
         newButton.id = listID;
-        newButton.style.whiteSpace = "pre-line";
-        newButton.style.wordSpacing = "3px";    
+        newButton.classList.add("list");   
         document.body.appendChild(newButton);
         newButton.innerHTML = '<b>' + listNameArray[i] + '</b>';
         currentTaskArray = taskArray[i];
@@ -140,6 +136,7 @@ function deleteList() {
             btn.id = String(Number(btn.id) - 1);
         }
     }
+    listID = listID - 1;
     localStorage.setItem("listNameArray", JSON.stringify(listNameArray));
     localStorage.setItem("taskArray", JSON.stringify(taskArray));
 }
