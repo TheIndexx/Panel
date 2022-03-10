@@ -1,5 +1,3 @@
-
-
 class Timer {
   //root refers to index.html's <div class="timer"> </div>
       constructor(root) {
