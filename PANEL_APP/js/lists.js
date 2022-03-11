@@ -70,21 +70,7 @@ function genesisOnClick() {
     //when button is clicked, call newTask which creates a task
     newButton.addEventListener("click", function() {newTask(newButton.id)});
 
-    const contextMenu = document.getElementById("context-menu");
-    const scope = document.querySelector("body");
-    newButton.addEventListener("contextmenu", (event) => {
-        rightClickID = newButton.id;
-        event.preventDefault();
-        const { clientX: mouseX, clientY: mouseY } = event;
-        contextMenu.style.top = `${mouseY}px`;
-        contextMenu.style.left = `${mouseX}px`;
-        contextMenu.classList.add("visible");
-    });
-    scope.addEventListener("click", (e) => {
-        if (e.target.offsetParent != contextMenu) {
-            contextMenu.classList.remove("visible");
-        }
-    });
+    contextMenuActivation(newButton);
 }
 
 // function to re-create lists and tasks from localstorage
@@ -105,22 +91,25 @@ function createExistingLists(listNameArray, taskArray) {
             }
         }
         newButton.addEventListener("click", function() {newTask(newButton.id)});
-        const contextMenu = document.getElementById("context-menu");
-        const scope = document.querySelector("body");
-        newButton.addEventListener("contextmenu", (event) => {
-            rightClickID = newButton.id;
-            event.preventDefault();
-            const { clientX: mouseX, clientY: mouseY } = event;
-            contextMenu.style.top = `${mouseY}px`;
-            contextMenu.style.left = `${mouseX}px`;
-            contextMenu.classList.add("visible");
-        });
-        scope.addEventListener("click", (e) => {
-            if (e.target.offsetParent != contextMenu) {
-                contextMenu.classList.remove("visible");
-            }
-        });
+        contextMenuActivation(newButton);
     }
+}
+
+function contextMenuActivation(object) {
+    const contextMenu = document.getElementById("context-menu");
+    object.addEventListener("contextmenu", (event) => {
+        rightClickID = object.id;
+        event.preventDefault();
+        const { clientX: mouseX, clientY: mouseY } = event;
+        contextMenu.style.top = `${mouseY}px`;
+        contextMenu.style.left = `${mouseX}px`;
+        contextMenu.classList.add("visible");
+    });
+    document.addEventListener("click", (e) => {
+        if (e.target.offsetParent != contextMenu) {
+            contextMenu.classList.remove("visible");
+        }
+    });
 }
 
 function deleteList() {
