@@ -12,7 +12,7 @@ body {
   bottom: 140px;
   left: 24px;
   background: rgb(243, 151, 90);
-  position: absolute;
+  position: fixed;
   line-height: 2em;
 }
 
@@ -49,7 +49,7 @@ body {
   bottom: 30px;
   left: 24px;
   z-index: -1;
-  position: absolute;
+  position: fixed;
   line-height: 2em;
 }
 
