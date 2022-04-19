@@ -1,4 +1,4 @@
-// looks weird, fix later
+// local storage of lists
 if (localStorage.getItem("listNameArray") === null) {
     var listNameArray = [];
 }
