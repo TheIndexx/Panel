@@ -17,24 +17,24 @@ var rightClickID = '';
 var listID = -1;
 
 function init() {
+    //delete lists button
     let deleteAllButton = document.createElement("button");
     deleteAllButton.classList.add("button_deleteAll");
     deleteAllButton.innerHTML = '<span class="material-icons">delete_forever</span>';
-    //add button to page
     document.body.appendChild(deleteAllButton);
     deleteAllButton.addEventListener("click", function() {deleteAllLists()});
 
-    //genesis button =  "Create New List"
+    //genesis button = "Create New List"
     let genesisButton = document.createElement("button");
     genesisButton.classList.add("button_create")
     genesisButton.innerHTML = '<span class="material-icons">add</span>';
-    //add button to page
     document.body.appendChild(genesisButton);
     //when button clicked, call genesisOnClick
     genesisButton.addEventListener("click", function() {genesisOnClick()});
     createExistingLists(listNameArray, taskArray);
 }
 
+// occurs when delete button is clicked
 function deleteAllLists() {
     for (let i = 0; i < listNameArray.length; i++) {
         var button = document.getElementById(i);
@@ -112,6 +112,7 @@ function contextMenuActivation(object) {
     });
 }
 
+//right click on a list to delete that list
 function deleteList() {
     const contextMenu = document.getElementById("context-menu");
     contextMenu.classList.remove("visible");
