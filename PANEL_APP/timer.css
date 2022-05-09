@@ -1,17 +1,18 @@
 body {
   margin: 24px;
-  background-color: rgb(135, 123, 207);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url(https://images.unsplash.com/photo-1650641033795-496437c828ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  font-family: "Quicksand", sans-serif;
+  background-size: cover
 }
 
 .timer {
-  font-family: sans-serif;
+  font-family: "Quicksand", sans-serif;
   display: inline-block;
   padding: 10px 32px;
   border-radius: 30px;
   bottom: 140px;
   left: 24px;
-  background: rgb(243, 151, 90);
+  background: #d4a373;
   position: fixed;
   line-height: 2em;
 }
@@ -28,24 +29,24 @@ body {
   border-radius: 50%;
   border: none;
   color: white;
-  background: #8208e6;
+  background: #cdb4db;
   cursor: pointer;
 }
 
 .text {
-  background: rgb(87, 139, 218);
+  background: #fefae0;
   border-radius: 30px;
   text-align: center;
   font-weight: bold;
 }
 
 .timer2 {
-  font-family: sans-serif;
+  font-family: "Quicksand", sans-serif;
   display: inline-block;
   padding: 10px 32px;
   padding-top: 40px;
   border-radius: 30px;
-  background: rgb(243, 151, 90);
+  background: #d4a373;
   bottom: 30px;
   left: 24px;
   z-index: -1;
@@ -70,7 +71,7 @@ body {
 }
 
 .timer__btn--start {
-  background: #00b84c;
+  background: #a1c181;
 }
 
 .timer__btn--stop {
@@ -78,7 +79,7 @@ body {
 }
 
 .timer2__btn--start {
-  background: #00b84c;
+  background: #a1c181;
 }
 
 .timer2__btn--stop {
@@ -122,7 +123,7 @@ font-size:20px;
   margin-right: 10px;
   border-radius: 50%;
   border: none;
-  background: #00b84c;
+  background: #ccd5ae;
   color:black;
 }
 
@@ -141,8 +142,8 @@ font-size:20px;
 
 .list
 {
-  background: rgb(243, 110, 110);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background: #d4a373;
+  font-family: "Quicksand", sans-serif;
   font-size: 17px;
   white-space: pre-line;
   word-spacing: 3px;
