@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="lists.css" />
 
   <title>Calendar</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="calendar.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
@@ -22,7 +22,28 @@
 
 
 <body>
-  <title>PANEL</title>
+  <title class ="title">PANEL</title>
+
+  <div>
+    <audio id="audio">
+      <source src="spirit-blossom-15285.mp3" type= "audio/mpeg">
+    </audio>
+
+    <button id="playPauseBTN" onclick="playPause()">Play &#9658;</button>
+    &nbsp;
+    &nbsp;
+    <button onclick="stop()">Stop &#9611;</button>
+  </div>
+
+  <script src="js/audio.js"></script>  
+
+<div>
+  <button id="btn-1">CHILL</button>
+  <button id="btn-2">LO-FI</button>
+  <button id="btn-3">FOCUS</button>
+  <button id="btn-4">PARTY</button>
+  <button id="btn-5">DEFAULT</button>
+</div>
 
   <div id="context-menu">
     <div class="item" onclick="deleteList()">Delete List</div>
@@ -65,6 +86,7 @@
   <script src="js/lists.js"></script>
   <script src="js/timer.js"></script>
   <script src="js/main.js"></script>  
+  <script src="js/background.js"></script>  
 
   <div class="container">
     <div class="calendar">

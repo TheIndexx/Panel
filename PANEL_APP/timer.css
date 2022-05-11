@@ -1,8 +1,15 @@
 body {
   margin: 24px;
   background-image: url(https://images.unsplash.com/photo-1650641033795-496437c828ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-repeat: no-repeat;
   font-family: "Quicksand", sans-serif;
   background-size: cover
+}
+
+.title {
+  border-radius: 30px;
+  text-align: center;
+  color: black;
 }
 
 .timer {
