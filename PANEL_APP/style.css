@@ -19,7 +19,7 @@ html {
 
 .container {
     width: 100%;
-    height: 100vh;
+    height: 15vh;
     color: #eee;
     display: flex;
     justify-content: right;
