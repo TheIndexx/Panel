@@ -18,12 +18,14 @@ html {
 }
 
 .container {
-    width: 100%;
-    height: 15vh;
+    padding: 10px 32px;
+    border-radius: 30px;
+    top: 24px;
+    right: 0px;
     color: #eee;
-    display: flex;
-    justify-content: right;
-    align-items: center;
+    position: fixed;
+    line-height: 2em;
+    
 }
 
 .calendar {
